@@ -1,12 +1,17 @@
-const sentence = "hello there from lighthouse labs";
-let delay = 0;
+let sentence = "hello there from lighthouse labs";
 
-setTimeout(() => {
-  for (const char of sentence) {
-    setTimeout(() => {
-      process.stdout.write(char);
-    }, delay);
-    delay += 500; // 50 ms is too fast, it all appears at once to me so I used 500 ms
-  }
-},1000);
-  
+const typewriter = function(string) {
+  string += '\n';
+  let delay = 0;
+
+  setTimeout(() => {
+    for (const char of string) {
+      setTimeout(() => {
+        process.stdout.write(char);
+      }, delay);
+      delay += 300; // 50 ms is too fast, it all appears at once to me so I used 300 ms
+    }
+  },1000);
+};
+
+typewriter(sentence);
