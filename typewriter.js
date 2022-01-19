@@ -1,7 +1,7 @@
 let sentence = "hello there from lighthouse labs";
 
 const typewriter = function(string) {
-  string += '\n';
+  string += '\n\n';
   let delay = 0;
 
   setTimeout(() => {
@@ -9,7 +9,7 @@ const typewriter = function(string) {
       setTimeout(() => {
         process.stdout.write(char);
       }, delay);
-      delay += 300; // 50 ms is too fast, it all appears at once to me so I used 300 ms
+      delay += 50;
     }
   },1000);
 };
